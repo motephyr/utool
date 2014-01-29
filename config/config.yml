@@ -1,0 +1,15 @@
+defaults: &defaults
+  app_name: "你的工具箱"
+  domain: "http://utool.herokuapp.com"
+  facebook_app_id: "786324161384120"
+  facebook_secret: "ca4e679ecaf31bbb55085f822e548afd"
+  embedly_key: "6e70a5a64f0e4368a5e5db62266d6694"
+  default_logo_url: "/logo.png"
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
