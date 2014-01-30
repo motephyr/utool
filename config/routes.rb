@@ -6,6 +6,18 @@ Utool::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'homes#index'
 
+  resources :homes do
+    collection do
+      get 'index1'
+      get 'index2'
+      get 'index3'
+      get 'index4'
+      get 'index5'
+      get 'index6'
+      get 'index7'
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

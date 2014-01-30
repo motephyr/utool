@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= auto_discovery_link_tag(:rss, "/posts/feed.rss", {title: "RSS"})  %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= yield :stylesheets %>
 </head>
 <%= render_body_tag %>
