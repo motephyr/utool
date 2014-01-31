@@ -14,9 +14,10 @@ Utool::Application.routes.draw do
       get 'index4'
       get 'index5'
       get 'index6'
-      get 'index7'
     end
   end
+
+  resources :links
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
