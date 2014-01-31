@@ -10,6 +10,8 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
+    @categories = Category.where(user: current_user)
+
   end
 
   def edit

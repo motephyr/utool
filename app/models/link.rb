@@ -1,5 +1,6 @@
 class Link < ActiveRecord::Base
   belongs_to :author, :class_name => "User", :foreign_key => :user_id
+  belongs_to :category, :counter_cache => true
 
   validates :url,:presence => true, :format => URI::regexp(%w(http https))
 
