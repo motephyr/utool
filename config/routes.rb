@@ -17,6 +17,10 @@ Utool::Application.routes.draw do
     end
   end
 
+  resources :users do
+    resources :links
+  end
+
   resources :links
 
   # Example of regular route:

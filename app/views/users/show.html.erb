@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="span1">
+    <button class="btn btn-block">新增類別</button>
+  </div>
+  <div class="span8">
+    <button class="btn btn-link">前端</button>
+    <button class="btn btn-link">RubyGem</button>
+    <button class="btn btn-link">教學</button>
+    <button class="btn btn-link">討論</button>
+  </div>
+  <div class="span3">
+    <%= link_to '新增網站', new_link_path, class: 'btn btn-large btn-block'  %>
+  </div>
+</div>
+
+<div class="row">
+  <% @links.each do |link| %>
+  <%= div_for(link, class: 'span3') do %>
+  <div class="row">
+    <div class="span1">
+      <%= image_tag link.thumbnail_url,  {height: 100,width:100}  %>
+      <%= link_to '內容', link_path(link) ,class: 'btn btn-mini btn-block' %>
+    </div>
+    <div class="span2">
+      <h5>
+        <%= link_to(link.title,link.url)  %>
+      </h5>
+      <p>
+        <%= link.direction %>
+      </p>
+    </div>
+  </div>
+</div> 
+<% end %>
+<% end %>
+
+
+</div>
