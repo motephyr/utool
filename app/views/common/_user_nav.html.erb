@@ -15,7 +15,7 @@
       <% end %>
 
       <%= render_list :class => "dropdown-menu" do |li|
-          li << link_to("我分享的",account_posts_path )
+          #li << link_to("我分享的",account_posts_path )
           li << link_to("Logout",destroy_user_session_path, :method => :delete )
       end %>
 
