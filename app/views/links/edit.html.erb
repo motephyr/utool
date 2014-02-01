@@ -1,0 +1,29 @@
+<h2>修改</h2>
+<div class="row">
+  <div class="span4 offset1">
+    <%= simple_form_for(@link) do |f| %>
+    <%= f.input :url, label: '網址', disabled: true %>
+    <%= f.input :category_id, label: '類別',collection:@categories %>
+    <%= f.input :direction, label: '說明' %>
+    <%= f.submit '送出' %>
+    <% end %>
+  </div>
+
+  <div class="span3">
+    <div class="row">
+      <div class="span1">
+        <%= image_tag @link.thumbnail_url,class: "center-block" ,style: "height:100px;width:100px" %>
+      </div>
+      <div class="span2">
+        <h5>
+          <%= link_to(@link.title,@link.url)  %>
+        </h5>
+        <p>
+          <%= @link.direction %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+

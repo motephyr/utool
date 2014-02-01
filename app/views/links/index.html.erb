@@ -39,7 +39,7 @@
     <th>Registration allows you to retrieve your saved files.
     </th>
     <th>
-      <img alt="motephyr" height="15" src="http://gravatar.com/avatar/2cf67e7b3ada70d681ebe4b47bfb8dac?size=15" width="15" />motephyr
+      <%= gravatar_image_tag(link.author.email.gsub('spam', 'mdeering'), :alt => link.author.name,:gravatar => {:size =>15})  %><%= link_to link.author.email,user_path(link.author) %>
     </th>
     <th>
       500

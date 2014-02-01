@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   end
 
   def show
-    @link = Link.find(params(:id))
+    @link = Link.joins(:category).find(params[:id])
   end
 
   def new
@@ -15,7 +15,8 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Link.find(params(:id))
+    @link = Link.find(params[:id])
+    @categories = Category.where(user: current_user)
 
   end
 
@@ -30,7 +31,7 @@ class LinksController < ApplicationController
   end
 
   def update
-    @link = Link.find(params(:id))
+    @link = Link.find(params[:id])
     if @link.update(link_params)
       redirect_to link_path(@link)
     else
@@ -38,7 +39,7 @@ class LinksController < ApplicationController
     end
   end
   def destroy
-    @link = Link.find(params(:id))
+    @link = Link.find(params[:id])
     @link.destory
 
     redirect_to links_path
