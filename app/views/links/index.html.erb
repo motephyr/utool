@@ -2,10 +2,10 @@
   <div class="span1">
   </div>
   <div class="span8">
-    <button class="btn btn-link">前端</button>
-    <button class="btn btn-link">RubyGem</button>
-    <button class="btn btn-link">教學</button>
-    <button class="btn btn-link">討論</button>
+    <%= link_to '全部', links_path, class: 'btn btn-link'  %>
+    <% @categories.each do |category| %>
+      <%= link_to category.name, links_path+'?category_id='+category.id.to_s, class: 'btn btn-link'  %>
+    <% end %>
   </div>
   <div class="span3">
     <%= link_to '新增網址',new_link_path,class: "btn btn-large btn-block" %>

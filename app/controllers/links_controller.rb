@@ -1,11 +1,12 @@
 class LinksController < ApplicationController
 
   def index
-    @links = Link.all
+    @links = params[:category_id] ? Link.where(category_id: params[:category_id]) : Link.all
+    @categories = Category.all
   end
 
   def show
-    @link = Link.joins(:category).find(params[:id])
+    @link = Link.find(params[:id])
   end
 
   def new
