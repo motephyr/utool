@@ -2,20 +2,19 @@
 
   <div class="span12">
     <div class="row">
-      <div class="span1"> 
-    <div class="span1">
-      <%= image_tag @link.thumbnail_url,class: "center-block" ,style: "height:100px;width:100px" %>
-      <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-mini btn-block' %>
-      <%= link_to '刪除', link_path(@link),class: 'btn btn-mini btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
-    </div>
-    <div class="span2">
-      <h5>
-        <%= link_to(@link.title,@link.url)  %>
-      </h5>
-      <p>
-        <%= @link.direction %>
-      </p>
-    </div>
+      <div class="span1">
+        <%= image_tag @link.thumbnail_url,class: "center-block" ,size: "100x100" %>
+        <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-mini btn-block' %>
+        <%= link_to '刪除', link_path(@link),class: 'btn btn-mini btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
+      </div>
+      <div class="span2">
+        <h5>
+          <%= link_to(@link.title,@link.url)  %>
+        </h5>
+        <p>
+          <%= @link.direction %>
+        </p>
+      </div>
     </div>
   </div>
 

@@ -18,7 +18,7 @@
   <%= div_for(link, class: 'span3') do %>
   <div class="row">
     <div class="span1">
-      <%= image_tag link.thumbnail_url,  {height: 100,width:100}  %>
+      <%= image_tag link.thumbnail_url, class: "center-block" ,size: "100x100"  %>
       <%= link_to '內容', link_path(link) ,class: 'btn btn-mini btn-block' %>
     </div>
     <div class="span2">
