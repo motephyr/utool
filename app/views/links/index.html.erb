@@ -8,7 +8,6 @@
     <% end %>
   </div>
   <div class="span3">
-    <%= link_to '新增網址',new_link_path,class: "btn btn-large btn-block" %>
   </div>
 </div>
 
@@ -40,7 +39,8 @@
       <%= link.description %>
     </th>
     <th>
-      <%= gravatar_image_tag(link.author.email.gsub('spam', 'mdeering'), :alt => link.author.name,:gravatar => {:size =>15})  %><%= link_to link.author.email,user_path(link.author) %>
+      <%= gravatar_image_tag(link.author.email.gsub('spam', 'mdeering'), :alt => link.author.name,:gravatar => {:size =>15})  %>
+      <%= link_to link.author.name, user_path(link.author) %>
     </th>
     <th>
       <%= link.hits %>

@@ -1,21 +1,16 @@
 <ul class="nav pills pull-right">
-      <li> 
+    <li> 
       <div class="social"> <%=  fb_like(Setting.domain) %>  </div>
-    </li>
-
-    <li>
-      <div style="padding: 4px 0 0 0">
-      <%= link_to "訂閱 RSS", "posts/feed.rss" , :class => "btn btn-mini btn-primary" %>
     </li>
   <% if current_user %>    
 
     <li class="dropdown">
-      <%= link_to "/users/edit" , :class => "dropdown-toggle", :data => { :toggle => "dropdown" } do %>
+      <%= link_to user_path(current_user) , :class => "dropdown-toggle", :data => { :toggle => "dropdown" } do %>
         <%= current_user.email %>
       <% end %>
 
       <%= render_list :class => "dropdown-menu" do |li|
-          #li << link_to("我分享的",account_posts_path )
+          li << link_to("設定","/users/edit" )
           li << link_to("Logout",destroy_user_session_path, :method => :delete )
       end %>
 
