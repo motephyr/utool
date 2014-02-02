@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def sign_up_required
+    redirect_to new_user_registration_url unless user_signed_in?
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password,:password_confirmation)} end

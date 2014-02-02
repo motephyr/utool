@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  before_action :login_required, only: [:index1]
+  before_action :sign_up_required, only: [:index1]
   def index
      if current_user
        redirect_to user_path(current_user)
