@@ -12,7 +12,9 @@
   <div class="span3">
     <div class="row">
       <div class="span1">
-        <%= image_tag @link.thumbnail_url,class: "center-block" ,size: "100x100" %>
+        <div style="width:100px;height:100px">
+              <%= image_tag link.thumbnail_url ? link.thumbnail_url : 'noimage.jpg' , class: "center-block" ,size: "100x100"  %>
+            </div>
       </div>
       <div class="span2">
         <h5>

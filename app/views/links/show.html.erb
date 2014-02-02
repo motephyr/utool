@@ -1,13 +1,13 @@
 <div class="row">
 
-  <div class="span12">
+  <div class="span6">
     <div class="row">
       <div class="span1">
-        <%= image_tag @link.thumbnail_url,class: "center-block" ,size: "100x100" %>
-        <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-mini btn-block' %>
-        <%= link_to '刪除', link_path(@link),class: 'btn btn-mini btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
+        <div style="width:100px;height:100px">
+              <%= image_tag link.thumbnail_url ? link.thumbnail_url : 'noimage.jpg' , class: "center-block" ,size: "100x100"  %>
+            </div>
       </div>
-      <div class="span2">
+      <div class="span4">
         <h5>
           <%= link_to(@link.title,@link.url)  %>
         </h5>
@@ -15,16 +15,20 @@
           <%= @link.direction %>
         </p>
       </div>
+      <div class="span1">
+        <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-mini btn-block' %>
+        <%= link_to '刪除', link_path(@link),class: 'btn btn-mini btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
+      </div>
     </div>
   </div>
 
 </div>
 
 <div class="row">
-  <div class="span12">
+  <div class="span6">
     <ul>
       <li>類別:<%= @link.category.name %></li>
-      <li>描述:<%= @link.direction %></li>
+      <li>描述:<%= @link.description %></li>
       <li>點擊數:<%= @link.hits %></li>
     </ul>
   </div>
@@ -32,43 +36,3 @@
 
 
 <hr></hr>
-<div>
-  <h4>討論</h4>
-</div>
-<table class="table">
-  <tbody>
-    <tr>
-      <td>
-        <span class="author"> 
-          <strong> 留言者 : stanger </strong> 
-          (2013年3月10日)
-        </span>
-        <p> test</p> 
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="author"> 
-          <strong> 留言者 : stanger </strong> 
-          (2013年3月10日)
-        </span>
-        <p> test</p> 
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="author"> 
-          <strong> 留言者 : stanger </strong> 
-          (2013年3月10日)
-        </span>
-        <p> test</p> 
-      </td>
-    </tr>
-  </tbody>
-</table>
-<div>
-  <form accept-charset="UTF-8" action="/posts/22/comments/create" class="simple_form new_comment" id="new_comment" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="q1iZ6H6p4XF2cY4SIVkguAwdQxMtfBk1mlsqIvfBMPU=" /></div>
-    <div class="control-group text optional comment_comment"><label class="text optional control-label" for="comment_comment">留言</label><div class="controls"><textarea class="text optional" id="comment_comment" name="comment[comment]">
-    </textarea></div></div>
-    <input name="commit" type="submit" value="送出" />
-  </form>  </div>

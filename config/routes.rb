@@ -22,6 +22,7 @@ Utool::Application.routes.draw do
   end
 
   resources :links
+  resources :categories
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

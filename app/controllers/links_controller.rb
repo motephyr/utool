@@ -2,7 +2,7 @@ class LinksController < ApplicationController
 
   def index
     categories = Category.where(name: params[:category_name])
-    @links = categories ? Link.where(category_id: categories) : Link.all
+    @links = !categories.empty? ? Link.where(category_id: categories) : Link.all
   end
 
   def show
