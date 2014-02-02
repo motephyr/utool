@@ -1,8 +1,8 @@
 class LinksController < ApplicationController
 
   def index
-    @links = params[:category_id] ? Link.where(category_id: params[:category_id]) : Link.all
-    @categories = Category.all
+    categories = Category.where(name: params[:category_name])
+    @links = categories ? Link.where(category_id: categories) : Link.all
   end
 
   def show
@@ -11,6 +11,13 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
+
+    #預設加入"未分類"
+    if current_user.categories.where(name: '未分類').empty?
+      @category = current_user.categories.build(name: '未分類')
+      @category.save   
+    end 
+
     @categories = Category.where(user: current_user)
 
   end

@@ -3,9 +3,11 @@
   </div>
   <div class="span8">
     <%= link_to '全部', links_path, class: 'btn btn-link'  %>
-    <% @categories.each do |category| %>
-      <%= link_to category.name, links_path+'?category_id='+category.id.to_s, class: 'btn btn-link'  %>
-    <% end %>
+    <%= link_to '討論', links_path+'?category_name=討論', class: 'btn btn-link'  %>
+    <%= link_to '文摘', links_path+'?category_name=文摘', class: 'btn btn-link'  %>
+    <%= link_to 'Gem', links_path+'?category_name=Gem', class: 'btn btn-link'  %>
+    <%= link_to '前端技術', links_path+'?category_name=前端技術', class: 'btn btn-link'  %>
+    <%= link_to '教學', links_path+'?category_name=教學', class: 'btn btn-link'  %>
   </div>
   <div class="span3">
   </div>
