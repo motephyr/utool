@@ -14,7 +14,7 @@ Link 分類:
    ☐ 分類需新增刪除修改
 使用者資訊:
  ✔ 使用者可以更新自己個人資訊 @done (14-02-02 00:44)
- ☐ 使用者可以更改密碼
+ ✔ 使用者可以更改密碼 @done (14-02-02 00:49)
  ✔ 使用者可以放上自己 Github 網址 @done (14-01-10 21:07)
  ✔ 使用者的圖像是使用 http://gravatar.com https://github.com/mdeering/gravatar_image_tag @done (14-01-11 02:23)
  ☐ 使用者資料頁面

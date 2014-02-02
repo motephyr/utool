@@ -1,4 +1,10 @@
 class HomesController < ApplicationController
+  before_action :login_required, only: [:index1]
+  def index
+     if current_user
+       redirect_to user_path(current_user)
+     end
+  end
   def index1
   end
   def index2

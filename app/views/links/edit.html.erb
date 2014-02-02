@@ -12,9 +12,7 @@
   <div class="span3">
     <div class="row">
       <div class="span1">
-        <div style="width:100px;height:100px">
-              <%= image_tag link.thumbnail_url ? link.thumbnail_url : 'noimage.jpg' , class: "center-block" ,size: "100x100"  %>
-            </div>
+        <%= render partial: 'links/link_image_100',  locals: {link: @link} %>
       </div>
       <div class="span2">
         <h5>

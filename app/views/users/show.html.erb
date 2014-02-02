@@ -1,13 +1,6 @@
 <div class="row">
-  <div class="span3">
-    <%= simple_form_for(@category) do |f| %>
-    <%= f.input :name, label: '名稱' %>
-    <%= f.submit '新增' %>
-    <% end %>
-    <%= link_to '新增網站', new_link_path, class: 'btn btn-large btn-block'  %>
-  </div>
-
   <div class="span9">
+
     <div class="row">
       <div class="span9">
         <%= link_to '全部', user_path(@user), class: 'btn btn-link'  %>
@@ -24,9 +17,7 @@
         <%= div_for(link, class: 'span3') do %>
         <div class="row">
           <div class="span1">
-            <div style="width:100px;height:100px;overflow:hidden">
-              <%= image_tag link.thumbnail_url ? link.thumbnail_url : 'noimage.jpg' , class: "center-block" ,size: "100x100"  %>
-            </div>
+            <%= render partial: 'links/link_image_75',  locals: {link: link} %>
             <%= link_to '內容', link_path(link) ,class: 'btn btn-mini btn-block' %>
           </div>
           <div class="span2">
@@ -44,6 +35,13 @@
       </div>
     </div>
 
+  </div>
 
+  <div class="span3">
+    <%= simple_form_for(@category) do |f| %>
+    <%= f.input :name, label: '名稱' %>
+    <%= f.submit '新增' %>
+    <% end %>
+    <%= link_to '新增網站', new_link_path, class: 'btn btn-large btn-block'  %>
   </div>
 </div>
