@@ -3,7 +3,7 @@
   <div class="span4 offset1">
     <%= simple_form_for(@link) do |f| %>
     <%= f.input :url, label: '網址' %>
-    <%= f.input :category_id, label: '類別',collection:@categories %>
+    <%= f.input :category_id, label: '類別',collection: @categories, selected: "未分類" %>
     <%= f.input :direction, label: '說明' %>
     <%= f.submit '預覽' %>
     <% end %>
