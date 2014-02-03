@@ -13,9 +13,13 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.build(category_params)
-    @category.save
+    if @category.save
 
-    redirect_to categories_path
+      redirect_to categories_path
+    else
+      flash[:warning] = "類別名稱為空值或與其他類別同名。"
+      render :new
+    end
   end
 
   def update
@@ -23,14 +27,18 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to categories_path
     else
+      flash[:warning] = "類別名稱為空值或與其他類別同名。"
       render :edit
     end
   end
 
   def destroy
     @category = current_user.categories.find(params[:id])
-    @category.destroy
-
+    if @category.link.empty?
+      @category.destroy
+    else
+      flash[:warning] = "這個類別仍含有其他連結，請將這個類別內所有的連結刪除或修改為其他類別"
+    end
     redirect_to categories_path
   end
 
