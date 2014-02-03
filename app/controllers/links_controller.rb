@@ -7,6 +7,7 @@ class LinksController < ApplicationController
 
   def show
     @link = Link.find(params[:id])
+    Link.increment_counter(:hits, params[:id])
   end
 
   def new
