@@ -36,7 +36,7 @@
       <%= link.category.name %>
     </th>
     <th>
-      <%= link_to link.title,link.url  %>
+      <%= link_to(link.title, link.url, target: '_blank')  %>
     </th>
     <th>
       <%= link_to '內容',link_path(link),class: 'btn btn-mini'  %>
