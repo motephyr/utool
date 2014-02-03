@@ -1,4 +1,9 @@
 <div class="row">
+  <div class="span2">
+    <%= link_to '類別管理', categories_path, class: 'btn btn-large btn-block'  %>
+    <%= link_to '新增網站', new_link_path, class: 'btn btn-large btn-block'  %>
+  </div>
+
   <div class="span9">
 
     <div class="row">
@@ -37,11 +42,4 @@
 
   </div>
 
-  <div class="span3">
-    <%= simple_form_for(@category) do |f| %>
-    <%= f.input :name, label: '名稱' %>
-    <%= f.submit '新增' %>
-    <% end %>
-    <%= link_to '新增網站', new_link_path, class: 'btn btn-large btn-block'  %>
-  </div>
 </div>
