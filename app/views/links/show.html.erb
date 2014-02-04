@@ -14,8 +14,10 @@
         </p>
       </div>
       <div class="span1">
+        <% if current_user && current_user == @user %>
         <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-mini btn-block' %>
         <%= link_to '刪除', link_path(@link),class: 'btn btn-mini btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
+        <% end %>
       </div>
     </div>
   </div>
