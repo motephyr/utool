@@ -55,7 +55,7 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @link.destory
 
-    redirect_to links_path
+    redirect_to user_path(current_user)
 
   end
 
