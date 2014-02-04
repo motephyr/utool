@@ -2,8 +2,43 @@
   <div class="span12">
     <div class="row">
       <div class="span2">
-        <%= link_to "類別管理", categories_path, class: "btn btn-large btn-block"  %>
-      </div>
+        <h4>個人資料</h4>
+        <table >
+          <tbody>
+            <tr>
+              <td>
+                <span clas="author"> 
+                  <strong> 作者: </strong> 
+                </span>
+                 <%= @user.name %> 
+              </td>
+           </tr>
+           <tr>
+            <td>
+              <span clas="github"> 
+                <strong> Github: </strong> 
+              </span>
+            </td>
+            <%= @user.github_link %> 
+           <tr>
+            <td>
+              <span clas="blog"> 
+                <strong> Blog: </strong> 
+              </span>
+              <%= @user.blog_link %> 
+            </td>
+         </tr>
+       </tbody>
+     </table>
+     <% if current_user && current_user == @user %>
+     <%= link_to "新增網站", new_link_path, class: "btn btn-large btn-block"  %>
+     <% end %>
+     <% if current_user && current_user == @user %>
+     <%= link_to "類別管理", categories_path, class: "btn btn-large btn-block"  %>
+     <% end %>
+   </div>
+   <div class="span9">
+    <div class="row">
       <div class="span9">
         <%= link_to "全部", user_path(@user), class: "btn btn-link"  %>
         <% @categories.each do |category| %>
@@ -11,42 +46,36 @@
         <% end %>
       </div>
     </div>
-
     <div class="row">
-      <div class="span2">
-        <%= link_to "新增網站", new_link_path, class: "btn btn-large btn-block"  %>
-      </div>
-
-      <div class="span9">
-
-        <div class="row">
-          <div class="span9">
-            <div class="row">
-              <% @links.each do |link| %>
-              <%= div_for(link, class: "span3", style: "height:150px;overflow:hidden") do %>
-              <div class="row">
-                <div class="span1">
-                  <%= render partial: "links/link_image_75",  locals: {link: link} %>
-                  <%= link_to "內容", link_path(link) ,class: "btn btn-mini btn-block" %>
-                </div>
-                <div class="span2">
-                  <h5>
-                    <%= link_to(link.title, link.url, target: "_blank")  %>
-                  </h5>
-                  <p>
-                    <%= link.direction %>
-                  </p>
-                </div>
-              </div>
-              <% end %>
-              <% end %>
-            </div>
-          </div>
+      <% @links.each do |link| %>
+      <%= div_for(link, class: "span3", style: "height:150px") do %>
+      <div class="row">
+        <div class="span1">
+          <%= render partial: "links/link_image_75",  locals: {link: link} %>
+          <%= link_to "內容", link_path(link) ,class: "btn btn-mini btn-block" %>
         </div>
-
+        <div class="span2">
+          <h5>
+            <%= link_to(link.title, link.url, target: "_blank")  %>
+          </h5>
+          <p>
+            <%= link.direction %>
+          </p>
+        </div>
       </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <div class="span2">
+
+  </div>
+
+</div>
+</div>
 
 </div>
 
