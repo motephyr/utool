@@ -53,7 +53,7 @@ class LinksController < ApplicationController
   end
   def destroy
     @link = Link.find(params[:id])
-    @link.destory
+    @link.destroy
 
     redirect_to user_path(current_user)
 
