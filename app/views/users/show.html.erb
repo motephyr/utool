@@ -11,7 +11,7 @@
         <% end %>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="span2">
         <%= link_to "新增網站", new_link_path, class: "btn btn-large btn-block"  %>
@@ -49,3 +49,8 @@
   </div>
 
 </div>
+
+
+<% content_for :javascripts do %>
+<%= javascript_include_tag "users" %>
+<% end %>
