@@ -1,6 +1,6 @@
 基本功能:
  ✔ 使用者可以登入 / 登出 @done (14-01-05 16:36)
- ☐ 使用者可以使用 Facebook 登入 https://github.com/xdite/auto-facebook
+ ✔ 使用者可以使用 Facebook 登入 https://github.com/xdite/auto-facebook @done (14-02-04 23:38)
 發表Link:
  ✔ 使用者可以填入網址，網站自動抓標題和簡介 http://embed.ly/docs/tutorials/jquery_preview @done (14-01-09 19:05)
     ✔ 合理化運作流程 @done (14-01-22 23:07)
@@ -17,7 +17,7 @@ Link 分類:
  ✔ 使用者可以更改密碼 @done (14-02-02 00:49)
  ✔ 使用者可以放上自己 Github 網址 @done (14-01-10 21:07)
  ✔ 使用者的圖像是使用 http://gravatar.com https://github.com/mdeering/gravatar_image_tag @done (14-01-11 02:23)
- ☐ 使用者資料頁面
+ ✔ 使用者資料頁面 @done (14-02-04 23:38)
 首頁熱門排列:
  ✔ Link 必須紀錄點擊數 @done (14-01-13 22:01) 
 Deploy:
@@ -30,7 +30,9 @@ Deploy:
  ✔ 使用postgresql做資料庫 @done (14-01-05 16:46)
  ☐ user忘記密碼的處理
  ✔ ajax reload demo @done (14-01-22 23:06)
- ☐ 資料驗證部分的程式處理
+ ✔ 資料驗證部分的程式處理 @done (14-02-04 23:38)
  ☐ seo_helper
- ✔ 個人頁 @done (14-02-01 23:03)
+ ☐ 個人頁
+ ☐ 排序
+ ☐ 上傳圖片
  
