@@ -1,8 +1,12 @@
 class LinksController < ApplicationController
 
   def index
-    categories = Category.where(name: params[:category_name])
-    @links = !categories.empty? ? Link.where(category_id: categories) : Link.all
+    if(params[:category_name])
+      categories = Category.where(name: params[:category_name])
+      @links = Link.where(category_id: categories) 
+    else
+      @links = Link.all
+    end
   end
 
   def show
@@ -33,7 +37,7 @@ class LinksController < ApplicationController
     @link = current_user.links.build(link_params)
 
     if @link.save
-      redirect_to links_path
+      redirect_to user_path(current_user)
     else
       render :new
     end

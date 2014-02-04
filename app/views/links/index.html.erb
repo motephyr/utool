@@ -2,12 +2,12 @@
   <div class="span1">
   </div>
   <div class="span8">
-    <%= link_to '全部', links_path, class: 'btn btn-link'  %>
-    <%= link_to '討論', links_path+'?category_name=討論', class: 'btn btn-link'  %>
-    <%= link_to '文摘', links_path+'?category_name=文摘', class: 'btn btn-link'  %>
-    <%= link_to 'Gem', links_path+'?category_name=Gem', class: 'btn btn-link'  %>
-    <%= link_to '前端技術', links_path+'?category_name=前端技術', class: 'btn btn-link'  %>
-    <%= link_to '教學', links_path+'?category_name=教學', class: 'btn btn-link'  %>
+    <%= link_to "全部", links_path, class: "btn btn-link"  %>
+    <%= link_to "討論", "#{links_path}?category_name=討論", class: "btn btn-link"  %>
+    <%= link_to "文摘", "#{links_path}?category_name=文摘", class: "btn btn-link"  %>
+    <%= link_to "Gem", "#{links_path}?category_name=Gem", class: "btn btn-link"  %>
+    <%= link_to "前端技術", "#{links_path}?category_name=前端技術", class: "btn btn-link"  %>
+    <%= link_to "教學", "#{links_path}?category_name=教學", class: "btn btn-link"  %>
   </div>
   <div class="span3">
   </div>
@@ -30,22 +30,22 @@
   <% @links.each do |link| %>
   <%= content_tag_for(:tr,link) do %>
     <th>        
-      <%= render partial: 'links/link_image_50',  locals: {link: link} %>
+      <%= render partial: "links/link_image_50",  locals: {link: link} %>
     </th>
     <th> 
       <%= link.category.name %>
     </th>
     <th>
-      <%= link_to(link.title, link.url, target: '_blank')  %>
+      <%= link_to(link.title, link.url, target: "_blank")  %>
     </th>
     <th>
-      <%= link_to '內容',link_path(link),class: 'btn btn-mini'  %>
+      <%= link_to "內容",link_path(link),class: "btn btn-mini"  %>
     </th>
     <th>
       <%= link.description %>
     </th>
     <th>
-      <%= gravatar_image_tag(link.author.email.gsub('spam', 'mdeering'), :alt => link.author.name,:gravatar => {:size =>15})  %>
+      <%= gravatar_image_tag(link.author.email.gsub("spam", "mdeering"), :alt => link.author.name,:gravatar => {:size =>15})  %>
       <%= link_to link.author.name, user_path(link.author) %>
     </th>
     <th>
