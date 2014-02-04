@@ -44,7 +44,7 @@ class LinksController < ApplicationController
   end
 
   def update
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
     if @link.update(link_params)
       redirect_to link_path(@link)
     else
@@ -52,7 +52,7 @@ class LinksController < ApplicationController
     end
   end
   def destroy
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
     @link.destroy
 
     redirect_to user_path(current_user)
