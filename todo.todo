@@ -29,7 +29,6 @@ Deploy:
  ✔ .gitignore對於database.yml和secret_token.rb的處理 @done (14-01-28 02:19)
  ✔ 使用postgresql做資料庫 @done (14-01-05 16:46)
  ☐ user忘記密碼的處理
- ✔ ajax reload demo @done (14-01-22 23:06)
  ✔ 資料驗證部分的程式處理 @done (14-02-04 23:38)
  ☐ seo_helper
  ☐ 排序
