@@ -21,7 +21,11 @@ Utool::Application.routes.draw do
     resources :links
   end
 
-  resources :links
+  resources :links do
+    collection do
+      get 'hit_once'
+    end
+  end
   resources :categories
 
   # Example of regular route:

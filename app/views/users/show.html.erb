@@ -56,7 +56,7 @@
         </div>
         <div class="span2">
           <h5>
-            <%= link_to(link.title, link.url, target: "_blank")  %>
+            <%= link_to(link.title,{controller: "links", action: "hit_once",id: link.id,url: link.url} ,target: "_blank")  %>
           </h5>
           <p>
             <%= link.direction %>

@@ -11,7 +11,7 @@ class LinksController < ApplicationController
 
   def show
     @link = Link.find(params[:id])
-    Link.increment_counter(:hits, params[:id])
+    add_hit
   end
 
   def new
@@ -59,8 +59,17 @@ class LinksController < ApplicationController
 
   end
 
+  def hit_once
+    add_hit
+    redirect_to params[:url]
+  end
+
   private
+  def add_hit
+    Link.increment_counter(:hits, params[:id])
+  end
   def link_params
     params.require(:link).permit(:url,:category_id,:direction)
   end
+
 end
