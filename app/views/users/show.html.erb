@@ -31,7 +31,7 @@
        </tbody>
      </table>
      <% if current_user && current_user == @user %>
-     <%= link_to "新增網站", new_link_path, class: "btn btn-large btn-block"  %>
+     <%= link_to "新增網站", "#{new_link_path}?category_id=#{params[:category_id]}", class: "btn btn-large btn-block"  %>
      <%= link_to "類別管理", categories_path, class: "btn btn-large btn-block"  %>
      <% end %>
    </div>
