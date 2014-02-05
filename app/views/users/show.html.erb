@@ -32,8 +32,6 @@
      </table>
      <% if current_user && current_user == @user %>
      <%= link_to "新增網站", new_link_path, class: "btn btn-large btn-block"  %>
-     <% end %>
-     <% if current_user && current_user == @user %>
      <%= link_to "類別管理", categories_path, class: "btn btn-large btn-block"  %>
      <% end %>
    </div>
@@ -51,7 +49,7 @@
       <%= div_for(link, class: "span3", style: "height:150px") do %>
       <div class="row">
         <div class="span1">
-          <%= render partial: "links/link_image_75",  locals: {link: link} %>
+          <%= render partial: "links/link_image_100",  locals: {link: link} %>
           <%= link_to "內容", link_path(link) ,class: "btn btn-mini btn-block" %>
         </div>
         <div class="span2">
