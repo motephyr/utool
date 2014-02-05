@@ -1,11 +1,11 @@
 <div class="row">
 
-  <div class="span6">
+  <div class="span12">
     <div class="row">
-      <div class="span1">
+      <div class="span1 offset4">
         <%= render partial: 'links/link_image_100',  locals: {link: @link} %>
       </div>
-      <div class="span4">
+      <div class="span2">
         <h5>
           <%= link_to(@link.title,@link.url)  %>
         </h5>
@@ -13,19 +13,21 @@
           <%= @link.direction %>
         </p>
       </div>
+
+      <% if @link.editable_by?(current_user) %>
       <div class="span1">
-        <% if current_user && current_user == @user %>
         <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-mini btn-block' %>
         <%= link_to '刪除', link_path(@link),class: 'btn btn-mini btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
-        <% end %>
       </div>
+      <% end %>
+
     </div>
   </div>
 
 </div>
 
 <div class="row">
-  <div class="span6">
+  <div class="span6 offset3">
     <ul>
       <li>類別:<%= @link.category.name %></li>
       <li>描述:<%= @link.description %></li>

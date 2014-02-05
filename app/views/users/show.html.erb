@@ -10,71 +10,64 @@
                 <span clas="author"> 
                   <strong> 作者: </strong> 
                 </span>
-                 <%= @user.name %> 
+                <%= @user.name %> 
               </td>
-           </tr>
-           <tr>
-            <td>
-              <span clas="github"> 
-                <strong> Github: </strong> 
-              </span>
-              <%= @user.github_link %>
-            </td> 
-           <tr>
-            <td>
-              <span clas="blog"> 
-                <strong> Blog: </strong> 
-              </span>
-              <%= @user.blog_link %> 
-            </td>
-         </tr>
-       </tbody>
-     </table>
-     <% if current_user && current_user == @user %>
-     <%= link_to "新增網站", "#{new_link_path}?category_id=#{params[:category_id]}", class: "btn btn-large btn-block"  %>
-     <%= link_to "類別管理", categories_path, class: "btn btn-large btn-block"  %>
-     <% end %>
-   </div>
-   <div class="span9">
-    <div class="row">
-      <div class="span9">
-        <%= link_to "全部", user_path(@user), class: "btn btn-link"  %>
-        <% @categories.each do |category| %>
-        <%= link_to category.name, "#{user_path(@user)}?category_id=#{category.id}", class: "btn btn-link"  %>
+            </tr>
+            <tr>
+              <td>
+                <span clas="github"> 
+                  <strong> Github: </strong> 
+                </span>
+                <%= @user.github_link %>
+              </td>
+            </tr> 
+            <tr>
+              <td>
+                <span clas="blog"> 
+                  <strong> Blog: </strong> 
+                </span>
+                <%= @user.blog_link %> 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <% if @user.is_self?(current_user) %>
+        <%= link_to "新增網站", "#{new_link_path}?category_id=#{params[:category_id]}", class: "btn btn-large btn-block"  %>
+        <%= link_to "類別管理", categories_path, class: "btn btn-large btn-block"  %>
         <% end %>
       </div>
-    </div>
-    <div class="row">
-      <% @links.each do |link| %>
-      <%= div_for(link, class: "span3", style: "height:150px") do %>
-      <div class="row">
-        <div class="span1">
-          <%= render partial: "links/link_image_100",  locals: {link: link} %>
-          <%= link_to "內容", link_path(link) ,class: "btn btn-mini btn-block" %>
+      <div class="span9">
+        <div class="row">
+          <div class="span9">
+            <%= link_to "全部", user_path(@user), class: "btn btn-link"  %>
+            <% @categories.each do |category| %>
+            <%= link_to category.name, "#{user_path(@user)}?category_id=#{category.id}", class: "btn btn-link"  %>
+            <% end %>
+          </div>
         </div>
-        <div class="span2">
-          <h5>
-            <%= link_to(link.title,{controller: "links", action: "hit_once",id: link.id,url: link.url} ,target: "_blank")  %>
-          </h5>
-          <p>
-            <%= link.direction %>
-          </p>
+        <div class="row">
+          <% @links.each do |link| %>
+          <%= div_for(link, class: "span3", style: "height:150px") do %>
+          <div class="row">
+            <div class="span1">
+              <%= render partial: "links/link_image_100",  locals: {link: link} %>
+              <%= link_to "內容", link_path(link) ,class: "btn btn-mini btn-block" %>
+            </div>
+            <div class="span2">
+              <h5>
+                <%= link_to(link.title,{controller: "links", action: "hit_once",id: link.id,url: link.url} ,target: "_blank")  %>
+              </h5>
+              <p>
+                <%= link.direction %>
+              </p>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
         </div>
       </div>
-      <% end %>
-      <% end %>
     </div>
   </div>
-</div>
-
-<div class="row">
-  <div class="span2">
-
-  </div>
-
-</div>
-</div>
-
 </div>
 
 

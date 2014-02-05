@@ -1,9 +1,6 @@
 <div class="row">
-<div class="span12">
-  <h2>新增類別</h2>
-    <%= simple_form_for(@category) do |f| %>
-    <%= f.input :name, label: '名稱' %>
-    <%= f.submit '送出' %>
-    <% end %>
-</div>
+  <div class="span12">
+    <h2>新增類別</h2>
+    <%= render partial: 'form' %>
+  </div>
 </div>
