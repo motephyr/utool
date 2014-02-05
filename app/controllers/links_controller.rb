@@ -3,9 +3,9 @@ class LinksController < ApplicationController
   def index
     if(params[:category_name])
       categories = Category.where(name: params[:category_name])
-      @links = Link.where(category_id: categories) 
+      @links = Link.where(category_id: categories).hot
     else
-      @links = Link.all
+      @links = Link.all.hot
     end
   end
 

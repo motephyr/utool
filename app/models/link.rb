@@ -4,8 +4,8 @@ class Link < ActiveRecord::Base
 
   validates :url, presence: true,uniqueness: { scope: :user_id}, format: URI::regexp(%w(http https))
 
-  scope :recent, order("created_at DESC")
-  scope :hot, order("hits DESC")
+  scope :recent, -> {order("created_at DESC")}
+  scope :hot, -> {order("hits DESC")}
 
   after_create :update_info
  
