@@ -16,6 +16,7 @@ gem "gravatar_image_tag"
 gem 'seo_helper', '~> 1.0'
 gem "kaminari"
 gem "simple_form"
+gem "rinku"  #base on c's auto_link   
 
 group :production do
   gem 'rails_12factor'
