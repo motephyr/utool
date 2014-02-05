@@ -9,3 +9,11 @@ $(".nav-collapse").find("li").each(() ->
   else
     $(this).removeClass("active");
 );
+
+$("[class='btn btn-link']").each(() ->
+  a = $(this)[0];
+  if $(a).attr("href") == decodeURI(location.pathname + location.search)
+    $(this).addClass("active");
+  else
+    $(this).removeClass("active");
+);

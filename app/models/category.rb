@@ -5,4 +5,5 @@ class Category < ActiveRecord::Base
 
  validates :name, presence: true
 
+ scope :order_by_id, -> { order("id ASC") }
 end
