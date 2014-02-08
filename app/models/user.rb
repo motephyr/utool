@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  serialize :links
 
   has_many :links,-> { order("position ASC") }
   has_many :categories
