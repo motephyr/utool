@@ -17,7 +17,7 @@ categories = [
 ] 
 categories.each do |category| 
   a = Category.where(:id => category[:id])
-  if a.empty?
+  if a.blank?
     s = Category.new category   
     s.id = category[:id]   
     s.save

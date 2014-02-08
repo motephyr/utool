@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap/collapse
+//= require jquery.ui.sortable

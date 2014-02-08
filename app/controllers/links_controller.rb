@@ -18,7 +18,7 @@ class LinksController < ApplicationController
     @link = Link.new
 
     #預設加入"未分類"
-    if current_user.categories.where(name: '未分類').empty?
+    if current_user.categories.where(name: '未分類').blank?
       @category = current_user.categories.build(name: '未分類')
       @category.save   
     end 
@@ -64,7 +64,26 @@ class LinksController < ApplicationController
     redirect_to params[:url]
   end
 
+  def list_insert
+    @link = current_user.links.find(params[:id])
+
+    if @link.not_in_list?
+      #重排順序
+      current_user.links.each_with_index do |x, index| 
+        Link.update_counters(x.id, position: index)
+      end 
+    end
+    
+    #將所移動的元素插入指定位置  
+    @link.insert_at(1+params[:position].to_i)
+    
+    respond_to do |format|
+      format.json { head :ok }
+    end
+  end
+
   private
+
   def add_hit
     Link.increment_counter(:hits, params[:id])
   end

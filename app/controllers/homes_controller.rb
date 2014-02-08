@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   before_action :sign_up_required, only: [:index1]
   def index
      if current_user
-      if current_user.links.empty?
+      if current_user.links.blank?
         redirect_to index1_homes_path
       else
         redirect_to user_path(current_user)

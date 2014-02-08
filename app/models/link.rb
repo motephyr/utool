@@ -1,8 +1,10 @@
 class Link < ActiveRecord::Base
   belongs_to :author, :class_name => "User", :foreign_key => :user_id
-  belongs_to :category, :counter_cache => true
 
-  validates :url, presence: true,uniqueness: { scope: :user_id}, format: URI::regexp(%w(http https))
+  belongs_to :category, :counter_cache => true
+  acts_as_list scope: :user
+
+  validates :url, presence: true,uniqueness: { scope: :user}, format: URI::regexp(%w(http https))
 
   scope :recent, -> {order("created_at DESC")}
   scope :hot, -> {order("hits DESC")}

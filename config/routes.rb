@@ -24,6 +24,7 @@ Utool::Application.routes.draw do
   resources :links do
     collection do
       get 'hit_once'
+      post 'list_insert'
     end
   end
   resources :categories

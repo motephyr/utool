@@ -46,6 +46,7 @@
           </div>
         </div>
         <div class="row">
+          <div id="sortable">
           <% @links.each do |link| %>
           <%= div_for(link, class: "span3", style: "height:150px") do %>
           <div class="row">
@@ -64,6 +65,7 @@
           </div>
           <% end %>
           <% end %>
+        </div>
         </div>
       </div>
     </div>

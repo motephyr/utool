@@ -17,3 +17,16 @@ $("[class='btn btn-link']").each(() ->
   else
     $(this).removeClass("active");
 );
+
+
+$("#sortable").sortable({
+  start:(event, ui) ->
+    ui.item.startPos = ui.item.index();
+    
+  stop:(event, ui ) -> 
+    id = $(ui.item).attr('id').split("_")[1]
+    position = ui.item.index()
+    $.post "/links/list_insert.json?id=#{id}&position=#{position}",(data) ->
+         alert(data)
+});
+$("#sortable").disableSelection();

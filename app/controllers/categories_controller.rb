@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = current_user.categories.find(params[:id])
-    if @category.link.empty?
+    if @category.link.blank?
       @category.destroy
     else
       flash[:warning] = "這個類別仍含有其他連結，請將這個類別內所有的連結刪除或修改為其他類別"

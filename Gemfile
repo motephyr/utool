@@ -6,7 +6,6 @@ gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
 gem "bootstrap_helper", ">= 4.2.2.1"
 gem "settingslogic"
 gem "open_graph_helper"
-gem 'acts_as_commentable'
 gem "omniauth"
 gem "omniauth-facebook"
 gem "auto-facebook", "0.42"
@@ -17,6 +16,10 @@ gem 'seo_helper', '~> 1.0'
 gem "kaminari"
 gem "simple_form"
 gem "rinku"  #base on c's auto_link   
+
+gem "acts_as_list"
+gem 'acts_as_commentable'
+gem 'jquery-ui-rails'
 
 group :production do
   gem 'rails_12factor'
