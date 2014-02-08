@@ -26,6 +26,6 @@ $("#sortable").sortable({
   stop:(event, ui ) -> 
     id = $(ui.item).attr('id').split("_")[1]
     position = ui.item.index()
-    $.post "/links/list_insert.json?id=#{id}&position=#{position}"
+    $.post "/links/list_insert.json?id=#{id}&position=#{position}", -> (data)
 });
 $("#sortable").disableSelection();
