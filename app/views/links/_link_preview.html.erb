@@ -1,0 +1,24 @@
+  <div class="span7">
+    <div class="row">
+      <div class="span1 offset1">
+        <%= render partial: 'links/link_image_100',  locals: {link: @link} %>
+      </div>
+      <div class="span2">
+        <h5>
+          <%= link_to(@link.title,@link.url)  %>
+        </h5>
+        <p>
+          <%= @link.direction %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <ul>
+          <li>類別:<%= @link.category.name %></li>
+          <li>描述:<%= @link.description %></li>
+          <li>點擊數:<%= @link.hits %></li>
+        </ul>
+      </div>
+    </div>
+  </div>

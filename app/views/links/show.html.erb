@@ -1,41 +1,18 @@
 <div class="row">
-
-  <div class="span12">
+  <div class="span3">
+    <% if @link.editable_by?(current_user) %>
     <div class="row">
-      <div class="span1 offset4">
-        <%= render partial: 'links/link_image_100',  locals: {link: @link} %>
+      <div class="span1 offset2">
+        <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-block' %>
+        <%= link_to '刪除', link_path(@link),class: 'btn btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
       </div>
-      <div class="span2">
-        <h5>
-          <%= link_to(@link.title,@link.url)  %>
-        </h5>
-        <p>
-          <%= @link.direction %>
-        </p>
-      </div>
-
-      <% if @link.editable_by?(current_user) %>
-      <div class="span1">
-        <%= link_to '修改', edit_link_path(@link) ,class: 'btn btn-mini btn-block' %>
-        <%= link_to '刪除', link_path(@link),class: 'btn btn-mini btn-block',method: 'delete' ,confirm: 'Are you sure?'  %>
-      </div>
-      <% end %>
-
     </div>
+    <% end %>
   </div>
+  <%= render partial: 'links/link_preview',  locals: {link: @link} %>
+
 
 </div>
-
-<div class="row">
-  <div class="span6 offset3">
-    <ul>
-      <li>類別:<%= @link.category.name %></li>
-      <li>描述:<%= @link.description %></li>
-      <li>點擊數:<%= @link.hits %></li>
-    </ul>
-  </div>
-</div>
-
 
 <hr></hr>
 

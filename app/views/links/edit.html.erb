@@ -1,4 +1,8 @@
-<h2>修改</h2>
+<div class="row">
+  <div class="span11 offset1">
+    <h2>修改</h2>
+  </div>
+</div>
 <div class="row">
   <div class="span4 offset1">
     <%= simple_form_for(@link) do |f| %>
@@ -9,21 +13,13 @@
     <% end %>
   </div>
 
-  <div class="span3">
-    <div class="row">
-      <div class="span1">
-        <%= render partial: 'links/link_image_100',  locals: {link: @link} %>
-      </div>
-      <div class="span2">
-        <h5>
-          <%= link_to(@link.title,@link.url)  %>
-        </h5>
-        <p>
-          <%= @link.direction %>
-        </p>
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'links/link_preview',  locals: {link: @link} %>
 
-</div>
 
+</div>    
+
+
+
+<% content_for :stylesheets do %>
+<%= stylesheet_link_tag "links" %>
+<% end %>

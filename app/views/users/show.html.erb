@@ -48,7 +48,7 @@
         <div class="row">
           <div id="sortable">
           <% @links.each do |link| %>
-          <%= div_for(link, class: "span3 link") do %>
+          <%= div_for(link, class: "span3") do %>
           <div class="row">
             <div class="span1">
               <%= render partial: "links/link_image_100",  locals: {link: link} %>

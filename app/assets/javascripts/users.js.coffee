@@ -19,6 +19,7 @@ $("[class='btn btn-link']").each(() ->
 );
 
 
+#如何在js.coffee依身分決定可排列？
 $("#sortable").sortable({
   start:(event, ui) ->
     ui.item.startPos = ui.item.index();
