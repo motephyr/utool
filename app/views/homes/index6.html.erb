@@ -1,34 +1,33 @@
-<h2>新增</h2>
+
 <div class="row">
-  <div class="span3">
-    <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="KkVRenUwLpIqmqcn9x3bjzrbD54aHI55Xu4doyxI2Uk=" /></div>
-      <div><label for="user_name">網址</label><br />
-        <input autofocus="autofocus" id="user_name" name="user[name]" type="chec" /></div>
+  <div class="span11 offset1">
+    <h2>新增網址</h2>
+    <h5>1.將常用的工具網址複製並貼上</h5>
+    <h5>2.新增類別(稍後可做修改)</h5>
+    <h5>3.填入自已備忘的說明文字</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="span4 offset1">
+    <form accept-charset="UTF-8" action="/links" class="simple_form new_link" id="new_link" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="l29FB0dQsiPDyq4m4qkKweIiGw4jhlHGXAd7QrZXvfg=" /></div>
+      <div class="control-group url required link_url"><label class="url required control-label" for="link_url"><abbr title="required">*</abbr> 網址</label><div class="controls"><input class="string url required" id="link_url" name="link[url]" type="url" /></div></div>
+      <div class="control-group select optional link_category_id"><label class="select optional control-label" for="link_category_id">類別</label><div class="controls"><select class="select optional" id="link_category_id" name="link[category_id]"><option value="2">前端技術</option>
+        <option value="4">教學</option>
+        <option value="1">未分類</option>
+        <option value="12">tests</option></select></div></div>
+        <div class="control-group text optional link_direction"><label class="text optional control-label" for="link_direction">說明</label><div class="controls"><textarea class="text optional" id="link_direction" name="link[direction]">
+        </textarea></div></div>
+        <div class="control-group text optional link_summary"><label class="text optional control-label" for="link_summary">摘要</label><div class="controls"><textarea class="text optional" id="link_summary" name="link[summary]">
+        </textarea></div></div>
+        <input name="commit" type="submit" value="儲存資料" />
+      </form>  </div>
 
-        <div><label for="user_name">類別</label><br />
-          <input autofocus="autofocus" id="user_name" name="user[name]" type="chec" /></div>
-
-          <div><label for="user_email">描述</label><br />
-            <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="" /></div>
-
-            <div><input name="commit" type="submit" value="送出" /></div>
-          </form>
+      <div class="span7">
+        <div class="row">
+          <div class="selector-wrapper"></div>
         </div>
-
-        <div class="span3">
-          <div class="row">
-            <div class="span1"> 
-              <img alt="Logo 50" src="http://www.colorzilla.com/firefox/images/logo-50.png" class="center-block" style="width:75px;height:75;" />
-            </div>
-            <div class="span2">
-              <h5><a href="http://www.colorzilla.com/gradient-editor/">Ultimate CSS Gradient Generator</a></h5>
-              <p>
-                A powerful Photoshop-like CSS gradient editor from ColorZilla. News: version 4 
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+    </div>
 
 

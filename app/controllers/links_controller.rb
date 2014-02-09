@@ -88,7 +88,7 @@ class LinksController < ApplicationController
     Link.increment_counter(:hits, params[:id])
   end
   def link_params
-    params.require(:link).permit(:url,:category_id,:direction)
+    params.require(:link).permit(:url,:category_id,:direction,:summary)
   end
 
 end
