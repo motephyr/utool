@@ -1,34 +1,124 @@
-<h2>修改</h2>
-<div class="row">
-  <div class="span3">
-    <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="KkVRenUwLpIqmqcn9x3bjzrbD54aHI55Xu4doyxI2Uk=" /></div>
-      <div><label for="user_name">網址</label><br />
-        <input autofocus="autofocus" id="user_name" name="user[name]" type="text" value="xxxx" readonly/></div>
-
-        <div><label for="user_name">類別</label><br />
-          <input autofocus="autofocus" id="user_name" name="user[name]" type="chec" /></div>
-
-          <div><label for="user_email">描述</label><br />
-            <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="" /></div>
-
-            <div><input name="commit" type="submit" value="送出" /></div>
-          </form>
+      <div class="row">
+        <div class="span11 offset1">
+          <h2>修改</h2>
         </div>
-
-        <div class="span3">
-          <div class="row">
-            <div class="span1"> 
-              <img alt="Logo 50" src="http://www.colorzilla.com/firefox/images/logo-50.png" class="center-block" style="width:75px;height:75;" />
-            </div>
-            <div class="span2">
-              <h5><a href="http://www.colorzilla.com/gradient-editor/">Ultimate CSS Gradient Generator</a></h5>
-              <p>
-                A powerful Photoshop-like CSS gradient editor from ColorZilla. News: version 4 
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
+      <div class="row">
+        <div class="span4 offset1">
+          <form accept-charset="UTF-8" action="/links/2" class="simple_form edit_link" id="edit_link_2" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="patch" /><input name="authenticity_token" type="hidden" value="preA07quuXeXns3B1mLV/c5N5kvcmPVDe8UHakcS0RQ=" /></div>
+            <div class="control-group url required disabled link_url"><label class="url required control-label" for="link_url"><abbr title="required">*</abbr> 網址</label><div class="controls"><input class="string url required disabled" disabled="disabled" id="link_url" name="link[url]" type="url" value="http://jsbin.com/OWAfUyim/6/edit" /></div></div>
+            <div class="control-group select optional link_category_id"><label class="select optional control-label" for="link_category_id">類別</label><div class="controls"><select class="select optional" id="link_category_id" name="link[category_id]"><option value="2">前端技術</option>
+              <option value="4">教學</option>
+              <option value="1">未分類</option>
+              <option value="12">tests</option></select></div></div>
+              <div class="control-group text optional link_direction"><label class="text optional control-label" for="link_direction">說明 (30個字以內是好主意)</label><div class="controls"><textarea class="text optional" id="link_direction" name="link[direction]">
+                預覽CSSss</textarea></div></div>
 
+                <input name="commit" type="submit" value="送出" />
+              </form>  </div>
+
+              <div class="span7">
+                <div class="row">
+                  <div class="span1">
+                    <div class="user_link_image">
+                      <img alt="Noimage" src="/assets/noimage.jpg" style="vertical-align:middle;" />
+                    </div>
+                  </div>
+                  <div class="span2">
+                    <h5>
+                      <a href="http://jsbin.com/OWAfUyim/6/edit">JS Bin - Collaborative JavaScript Debugging</a>
+                    </h5>
+                    <p>
+                      預覽CSSss
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="span6">
+                    <ul>
+                      <li>類別:教學</li>
+                      <li>描述:</li>
+                      <li>點擊數:45</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
+            </div> 
+
+            <div class="row">
+              <div class="span7 offset1">
+                <div class="control-group text optional link_summary">
+                  <label class="text optional control-label" for="link_summary">摘要</label>
+
+                  <ul class="nav nav-tabs" id="myTab">
+                    <li><a href="#writetab" data-toggle="tab">編輯(使用markdown語法)</a></li>
+                    <li><a href="#previewtab" data-toggle="tab">預覽</a></li>
+                  </ul>
+
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="writetab">
+                      <textarea id="text-input" oninput="this.editor.update()" rows="12" cols="60" class="input-xxxlarge" type="text" placeholder=".input-xxxlarge">Markdown
+=========
+
+## what is Markdown?
+see [Wikipedia](http://en.wikipedia.org/wiki/Markdown)
+
+> Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz allowing people "to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML)".
+
+----
+## markdown quick reference
+# headers
+
+*emphasis*
+
+**strong**
+
+* list
+
+>block quote
+
+    code (4 spaces indent)
+[links](http://wikipedia.org)
+
+----
+## thanks
+* [markdown-js](https://github.com/evilstreak/markdown-js)</textarea>
+                    </div>
+                    <div class="tab-pane" id="previewtab">
+                      <div id="preview"> </div>
+                    </div>
+                  </div>
+
+                  <script>
+                  $('#myTab a').click(function (e) {
+                    e.preventDefault();
+                    //$(this).tab('show');
+                  })
+                  function Editor(input, preview) {
+                    this.update = function () {
+                      preview.innerHTML = markdown.toHTML(input.value);
+                    };
+                    input.editor = this;
+                    this.update();
+                  }
+                  var $ = function (id) { return document.getElementById(id); };
+                  new Editor($("text-input"), $("preview"));
+                  </script>
+
+                </div>
+              </div>
+              <div class="span4">
+                <h4>markdown語法摘要</h4>
+                <pre><code>標題
+============ ----------</code></pre>
+                <pre><code>＃,##,###,####,#####,######小標題</code></pre>
+                <pre><code>[連結你的工具箱](http://utool.herokuapp.com)</code></pre>
+                <pre><code>![ruby icon](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruby_logo.png/105px-Ruby_logo.png)
+</code></pre>
+<p>其他更多用法 請參考 <a href="https://www.google.com.tw/search?safe=off&espv=210&es_sm=91&q=markdown+語法&oq=markdown+語法" target="_blank">markdown語法</a></p>
+
+                </div>
+              </div>
 

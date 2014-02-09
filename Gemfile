@@ -20,6 +20,8 @@ gem "rinku"  #base on c's auto_link
 gem "acts_as_list"
 gem 'acts_as_commentable'
 gem 'jquery-ui-rails'
+gem 'redcarpet' #markdown
+gem 'coderay'   #markdown
 
 group :production do
   gem 'rails_12factor'
