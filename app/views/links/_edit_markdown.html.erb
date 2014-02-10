@@ -1,0 +1,90 @@
+            <div class="row">
+              <div class="span8">
+                <div class="control-group text optional link_summary">
+                  <label class="text optional control-label" for="link_summary">摘要</label>
+
+                  <ul class="nav nav-tabs" id="myTab">
+                    <li><a href="#writetab" data-toggle="tab">編輯(使用markdown語法)</a></li>
+                    <li><a href="#previewtab" data-toggle="tab">預覽</a></li>
+                  </ul>
+
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="writetab">
+                      <textarea id="text-input" oninput="this.editor.update()" rows="12" cols="60" class="input-xxxlarge" type="text"><% if !@link.summary.blank? %><%= @link.summary %>
+                        <% else %>Markdown
+=========
+
+## what is Markdown?
+see [Wikipedia](http://en.wikipedia.org/wiki/Markdown)
+
+> Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz allowing people "to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML)".
+
+----
+## markdown quick reference
+# headers
+
+*emphasis*
+
+**strong**
+
+* list
+
+>block quote
+
+    code (4 spaces indent)
+[links](http://wikipedia.org)
+
+----
+## thanks
+* [markdown-js](https://github.com/evilstreak/markdown-js)<% end %></textarea>
+                    </div>
+                    <div class="tab-pane" id="previewtab">
+                      <div id="preview"> </div>
+                    </div>
+                  </div>
+
+                  <script>
+                  (function($){ 
+                  $('#myTab a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                  })
+
+                  $( "#submit-button" ).on('click',function() {
+                    var form_id = $("form:first").attr("id");
+                    $("#link_summary").val($("#text-input").val());
+                    $( "#"+form_id ).submit();
+                  });
+                  })(jQuery)
+
+                  function Editor(input, preview) {
+                    this.update = function () {
+                      preview.innerHTML = markdown.toHTML(input.value);
+                    };
+                    input.editor = this;
+                    this.update();
+                  }
+                  var $ = function (id) { return document.getElementById(id); };
+                  new Editor($("text-input"), $("preview"));
+                  </script>
+
+                </div>
+    <input id="submit-button" name="commit" type="submit" value="儲存資料">
+
+              </div>
+              <div class="span4">
+                <h4>markdown語法摘要</h4>
+                <pre><code>標題
+============(or----------)</code></pre>
+                <pre><code>＃,##,###,####,#####,######小標題</code></pre>
+                <pre><code>[連結你的工具箱](http://utool.herokuapp.com)</code></pre>
+                <pre><code>![ruby icon](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruby_logo.png/105px-Ruby_logo.png)</code></pre>
+                <pre><code>>在這個符號(>)後所寫的字都是區塊，直到整行的最大長度才會換行，如要恢復正常文字請空一行</code></pre>
+                <pre><code>(四個空格)後面接程式區塊
+    程式區塊
+    程式區塊第二行</code></pre>
+</code></pre>
+<p>其他更多用法 請參考 <a href="https://www.google.com.tw/search?safe=off&espv=210&es_sm=91&q=markdown+語法&oq=markdown+語法" target="_blank">markdown語法</a></p>
+
+                </div>
+              </div>

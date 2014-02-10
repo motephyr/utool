@@ -1,16 +1,15 @@
 <div class="row">
-  <div class="span11 offset1">
+  <div class="span12">
     <h2>修改</h2>
   </div>
 </div>
 <div class="row">
-  <div class="span4 offset1">
+  <div class="span4">
     <%= simple_form_for(@link) do |f| %>
     <%= f.input :url, label: '網址', disabled: true %>
     <%= f.input :category_id, label: '類別',collection: @categories, selected: @categories.first %>
-    <%= f.input :direction, label: '說明' %>
-    <%= f.input :summary, label: '摘要' %>
-    <%= f.submit '送出' %>
+    <%= f.input :direction, label: '說明 (30個字以內是好主意)' %>
+    <%= f.input :summary, as: :hidden %>
     <% end %>
   </div>
 
@@ -19,8 +18,10 @@
 
 </div>    
 
-
+<%= render partial: 'edit_markdown',locals: {link: @link} %>
 
 <% content_for :stylesheets do %>
 <%= stylesheet_link_tag "links" %>
+<% end %>
+<% content_for :javascripts do %>
 <% end %>
