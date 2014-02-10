@@ -1,4 +1,4 @@
-$(function() {
+(function($) {
   $('#link_url').preview({key: '6e70a5a64f0e4368a5e5db62266d6694'}) // Sign up for a key: http://embed.ly/pricing
     .on('loading', function(){
       $(this).prop('disabled', true);
@@ -36,4 +36,4 @@ $(function() {
       return false;
     }
   });
-});
+})(jQuery);
