@@ -3,6 +3,19 @@
 @import "bootstrap-override";
 @import "bootstrap-responsive";
 
+body {
+  background-color: #f8f8f8;
+  background-image: url(/assets/bg.jpg);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+}
+
 .social{
    float:left;
    width: 90px;
