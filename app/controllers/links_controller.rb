@@ -28,7 +28,7 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
     @categories = Category.where(user: current_user)
 
   end
