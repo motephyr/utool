@@ -35,8 +35,8 @@ Deploy:
    ☐ 如何在js.coffee依身分決定可排列？(data-attribute)
  ☐ 上傳圖片
  ✔ 編輯(by markdown) @done (14-02-11 00:49)
-   ☐ 為何重開heroku在編輯頁面就無法送出？(jquery ready)
-   ☐ 奇怪的跑版(上一頁or下一頁or連結)(turbolink)
+   ✔ 為何重開heroku在編輯頁面就無法送出？(jquery ready修正ok) @done (14-02-12 00:25)
+   ☐ 奇怪的跑版(上一頁or下一頁or連結)(css turbolink移除，觀察中)
  ☐ 搜尋
  ☐ 可編輯標題
  ☐ 瀏覽樣式修改
