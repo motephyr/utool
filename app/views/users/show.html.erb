@@ -18,7 +18,7 @@
                 <span clas="github"> 
                   <strong> Github: </strong> 
                 </span>
-                <%= set_title_link("連結", @user.github_link) %>
+                <%= render_link_title("連結", @user.github_link) %>
               </td>
             </tr> 
             <tr>
@@ -26,7 +26,7 @@
                 <span clas="blog"> 
                   <strong> Blog: </strong> 
                 </span>
-                <%= set_title_link("連結", @user.blog_link) %>
+                <%= render_link_title("連結", @user.blog_link) %>
               </td>
             </tr>
           </tbody>

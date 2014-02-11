@@ -11,32 +11,7 @@
                   <div class="tab-content">
                     <div class="tab-pane active" id="writetab">
                       <textarea id="text-input" oninput="this.editor.update()" rows="10" cols="60" class="input-xxxlarge" type="text"><% if !@link.summary.blank? %><%= @link.summary %>
-                        <% else %>Markdown
-=========
-
-## what is Markdown?
-see [Wikipedia](http://en.wikipedia.org/wiki/Markdown)
-
-> Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz allowing people "to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML)".
-
-----
-## markdown quick reference
-# headers
-
-*emphasis*
-
-**strong**
-
-* list
-
->block quote
-
-    code (4 spaces indent)
-[links](http://wikipedia.org)
-
-----
-## thanks
-* [markdown-js](https://github.com/evilstreak/markdown-js)<% end %></textarea>
+                        <% else %><%= render partial: "markdown_text" %><% end %></textarea>
                     </div>
                     <div class="tab-pane markdown-bg" id="previewtab">
                       <div id="preview"> </div>
@@ -44,16 +19,18 @@ see [Wikipedia](http://en.wikipedia.org/wiki/Markdown)
                   </div>
 
                   <script>
-                  (function($){ 
-                  $('#myTab a').click(function (e) {
-                    e.preventDefault();
-                    $(this).tab('show');
-                  })
+                  (function($){
+                  $(function(){ 
+                    $('#myTab a').click(function (e) {
+                      e.preventDefault();
+                      $(this).tab('show');
+                    })
 
-                  $( "#submit-button" ).on('click',function() {
-                    var form_id = $("form:first").attr("id");
-                    $("#link_summary").val($("#text-input").val());
-                    $( "#"+form_id ).submit();
+                    $( "#submit-button" ).on('click',function() {
+                      var form_id = $("form:first").attr("id");
+                      $("#link_summary").val($("#text-input").val());
+                      $( "#"+form_id ).submit();
+                    });
                   });
                   })(jQuery)
 

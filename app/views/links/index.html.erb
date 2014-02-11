@@ -31,7 +31,7 @@
     <% @links.each do |link| %>
     <%= content_tag_for(:tr,link) do %>
     <th>        
-      <%= render partial: "links/link_image_50",  locals: {link: link} %>
+      <%= render_link_image(link) %>
     </th>
     <th> 
       <%= link.category.name %>
