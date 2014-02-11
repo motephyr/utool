@@ -17,3 +17,5 @@
 //= require twitter/bootstrap/tab
 //= require jquery.ui.sortable
 //= require markdown.min
+
+pathArray = location.pathname.split( '/' );

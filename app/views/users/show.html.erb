@@ -1,3 +1,7 @@
+<% if current_user %>
+  <%= tag("div",id: "user", data: {id: current_user.id, name:current_user.name }) %>
+<% end %>
+
 <div class="row">
   <div class="span12">
     <div class="row">
