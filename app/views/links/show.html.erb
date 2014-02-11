@@ -10,32 +10,32 @@
     <% end %>
   </div>
   <%= render partial: 'links/link_preview',  locals: {link: @link} %>
-
-
 </div>
 
 <hr></hr>
 <div class="row">
-  <div class="span8 offset2" style="background-color:#f1f1f1">
-    <textarea id="aaa" style="display:none"><%= @link.summary %></textarea>
-    <div id="bbb"></div>
+  <div class="span10 offset1 markdown-bg">
+    <div class="row">
+      <div class="span8 offset1">
+        <textarea id="originText" style="display:none"><%= @link.summary %></textarea>
+        <div id="markdownText"></div>
+      </div>
+    </div>
   </div>
 </div>
+</div>
 
-                  <script>
-                  
-                  function Editor(input, preview) {
-                    this.update = function () {
-                      preview.innerHTML = markdown.toHTML(input.value);
-                    };
-                    input.editor = this;
-                    this.update();
-                  }
-                  var $ = function (id) { return document.getElementById(id); };
-                  new Editor($("aaa"), $("bbb"));
-                  </script>
-
-                </div>
+<script>
+function Editor(input, preview) {
+  this.update = function () {
+    preview.innerHTML = markdown.toHTML(input.value);
+  };
+  input.editor = this;
+  this.update();
+}
+var $ = function (id) { return document.getElementById(id); };
+new Editor($("originText"), $("markdownText"));
+</script>
 
 <% content_for :stylesheets do %>
 <%= stylesheet_link_tag "links" %>
