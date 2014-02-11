@@ -43,7 +43,7 @@
       <%= link_to "內容",link_path(link),class: "btn btn-mini"  %>
     </th>
     <th>
-      <%= link.description %>
+      <%= truncate(link.description,length: 200) %>
     </th>
     <th>
       <%= gravatar_image_tag(link.author.email.gsub("spam", "mdeering"), :alt => link.author.name,:gravatar => {:size =>15})  %>
