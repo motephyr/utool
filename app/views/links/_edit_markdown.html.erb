@@ -10,11 +10,10 @@
 
                   <div class="tab-content">
                     <div class="tab-pane active" id="writetab">
-                      <textarea id="text-input" oninput="this.editor.update()" rows="10" cols="60" class="input-xxxlarge" type="text"><% if !@link.summary.blank? %><%= @link.summary %>
-                        <% else %><%= render partial: "markdown_text" %><% end %></textarea>
+                      <textarea id="text-input" oninput="this.editor.update()" rows="14" cols="60" class="input-xxxlarge" type="text"><% if !@link.summary.blank? %><%= @link.summary %><% else %><%= render partial: "markdown_text" %><% end %></textarea>
                     </div>
                     <div class="tab-pane markdown-bg" id="previewtab">
-                      <div id="preview"> </div>
+                      <div id="preview"></div>
                     </div>
                   </div>
 
@@ -50,18 +49,6 @@
 
               </div>
               <div class="span4">
-                <h4>markdown語法摘要</h4>
-                <pre><code>標題
-============ (or----------)</code></pre>
-                <pre><code>＃,##,###,####,#####,######小標題</code></pre>
-                <pre><code>[連結你的工具箱](http://utool.herokuapp.com)</code></pre>
-                <pre><code>![ruby icon](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruby_logo.png/105px-Ruby_logo.png)</code></pre>
-                <pre><code>>在這個符號(>)後所寫的字都是區塊，直到整行的最大長度才會換行，如要恢復正常文字請空一行</code></pre>
-                <pre><code>(四個空格)後面接程式區塊
-    程式區塊
-    程式區塊第二行</code></pre>
-</code></pre>
-<p>其他更多用法 請參考 <a href="https://www.google.com.tw/search?safe=off&espv=210&es_sm=91&q=markdown+語法&oq=markdown+語法" target="_blank">markdown語法</a></p>
-
+                <%= render partial: "markdown_tips" %>
                 </div>
               </div>
