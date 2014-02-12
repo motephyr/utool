@@ -23,13 +23,13 @@ class LinksController < ApplicationController
       @category.save   
     end 
 
-    @categories = Category.where(user: current_user)
+    @categories = current_user.categories
 
   end
 
   def edit
     @link = current_user.links.find(params[:id])
-    @categories = Category.where(user: current_user)
+    @categories = current_user.categories
 
   end
 
