@@ -10,7 +10,11 @@
 
                   <div class="tab-content">
                     <div class="tab-pane active" id="writetab">
-                      <textarea id="text-input" oninput="this.editor.update()" rows="14" cols="60" class="input-xxxlarge" type="text"><% if !@link.summary.blank? %><%= @link.summary %><% else %><%= render partial: "markdown_text" %><% end %></textarea>
+                      <% if @link.summary.blank? %>
+                        <textarea id="text-input" oninput="this.editor.update()" rows="8" cols="60" class="input-xxxlarge" type="text"><%= render partial: "markdown_text" %></textarea>
+                      <% else %>
+                        <textarea id="text-input" oninput="this.editor.update()" rows="14" cols="60" class="input-xxxlarge" type="text"><%= @link.summary %></textarea>
+                      <% end %>
                     </div>
                     <div class="tab-pane markdown-bg" id="previewtab">
                       <div id="preview"></div>
