@@ -15,7 +15,7 @@ class LinksController < ApplicationController
   end
 
   def new
-    @link = Link.new
+    @link = Link.new(category_id: params[:category_id])
 
     #預設加入"未分類"
     if current_user.categories.where(name: '未分類').blank?
@@ -37,7 +37,7 @@ class LinksController < ApplicationController
     @link = current_user.links.build(link_params)
 
     if @link.save
-      redirect_to user_path(current_user)
+      redirect_to(new_link_path, flash: {info: "新增成功，再來幾個吧！"})
     else
       render :new
     end

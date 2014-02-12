@@ -1,19 +1,14 @@
 <div class="row">
   <div class="span12">
     <h2>新增網址</h2>
-    <h5>1.將常用的工具網址複製並貼上</h5>
-    <h5>2.新增類別(稍後可做修改)</h5>
-    <h5>3.填入自已備忘的說明文字</h5>
+    <h6>1.將常用的工具網址複製並貼上</h6>
+    <h6>2.選擇類別(稍後可做修改)</h6>
+    <h6>3.填入自已備忘的說明文字</h6>
   </div>
 </div>
 <div class="row">
   <div class="span4">
-    <%= simple_form_for(@link) do |f| %>
-    <%= f.input :url, label: '網址' %>
-    <%= f.input :category_id, label: '類別',collection: @categories, selected: params[:category_id] %>
-    <%= f.input :direction, label: '說明 (30個字以內是好主意)' %>
-    <%= f.input :summary, as: :hidden %>
-    <% end %>
+    <%= render partial:"form" %>
   </div>
 
   <div class="span8 embly_preview">
