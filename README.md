@@ -1,9 +1,11 @@
-utool
+UTOOL
 =====
 
-你的工具箱
+閱讀網頁文件的速記工具(以markdown來編輯)
 
 ## License
+
+Copyright 2014 UTOOL.
 
 * The code is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
