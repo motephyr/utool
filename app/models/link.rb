@@ -35,7 +35,7 @@ class Link < ActiveRecord::Base
     link.provider_name     =  truncate(response_data[:provider_name], length: 255)
     link.provider_url      =  truncate(response_data[:provider_url], length: 255)
     link.description       =  response_data[:description]
-    link.thumbnail_url     =  truncate(response_data[:thumbnail_url], length: 255)
+    link.thumbnail_url     =  response_data[:thumbnail_url]
     link.thumbnail_width   =  response_data[:thumbnail_width]
     link.thumbnail_height  =  response_data[:thumbnail_height]
     link.html              =  response_data[:html]

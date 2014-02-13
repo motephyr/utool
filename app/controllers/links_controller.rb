@@ -39,8 +39,9 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to(new_link_path, flash: {info: "新增成功，再來幾個吧！"})
     else
-      #render action: '/new', category_id: @link.category_id
-      redirect_to(new_link_path, flash: {warning: "未新增成功，請確認是否為有效網址。"})
+      # FIX
+      #render :new, category_id: @link.category_id
+      redirect_to(new_link_path, flash: {warning: "未新增成功，請確認是否為有效網址或已有相同網址。"})
     end
   end
 
