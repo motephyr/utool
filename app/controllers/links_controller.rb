@@ -37,6 +37,7 @@ class LinksController < ApplicationController
     @link = current_user.links.build(link_params)
 
     if @link.save
+      @link.insert_at(0)
       redirect_to(new_link_path, flash: {info: "新增成功，再來幾個吧！"})
     else
       # FIX
