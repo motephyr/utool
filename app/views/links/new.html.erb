@@ -9,6 +9,7 @@
 <div class="row">
   <div class="span4">
     <%= render partial:"form" %>
+    <input id="submit-button" name="commit" type="submit" value="儲存資料">
   </div>
 
   <div class="span8 embly_preview">
@@ -28,9 +29,6 @@
 
 </div>
 
-<%= render partial: 'edit_markdown',locals: {link: @link} %>
-
-
 <% content_for :stylesheets do %>
 <link rel="stylesheet" href="http://cdn.embed.ly/jquery.preview-0.3.2.css" />
 <% end %>
@@ -40,6 +38,22 @@
 <script src="http://embedly.github.io/jquery-preview/lib/mustache.js" type="text/javascript"></script>
 <script src="http://embedly.github.io/jquery-preview/lib/underscore.js" type="text/javascript"></script>
 <%= javascript_include_tag "links/new" %>
+<script>
+(function($){
+  $(function(){ 
+    $('#myTab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+
+    $( "#submit-button" ).on('click',function() {
+      var form_id = $("form:first").attr("id");
+      $("#link_summary").val($("#text-input").val());
+      $( "#"+form_id ).submit();
+    });
+  });
+})(jQuery)
+</script>
 <% end %>
 
 
