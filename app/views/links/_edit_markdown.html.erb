@@ -22,11 +22,12 @@
                   </div>
 
                   <script>
-                  (function($){
-                  $(function(){ 
+                  jQuery(document).ready(function($){
                     $('#myTab a').click(function (e) {
                       e.preventDefault();
                       $(this).tab('show');
+
+                      $("#preview").html(marked($("#text-input").val()));
                     })
 
                     $( "#submit-button" ).on('click',function() {
@@ -35,17 +36,9 @@
                       $( "#"+form_id ).submit();
                     });
                   });
-                  })(jQuery)
 
-                  function Editor(input, preview) {
-                    this.update = function () {
-                      preview.innerHTML = markdown.toHTML(input.value);
-                    };
-                    input.editor = this;
-                    this.update();
-                  }
-                  var $ = function (id) { return document.getElementById(id); };
-                  new Editor($("text-input"), $("preview"));
+
+
                   </script>
 
                 </div>

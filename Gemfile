@@ -16,6 +16,7 @@ gem 'seo_helper', '~> 1.0'
 gem "kaminari"
 gem "simple_form"
 gem "rinku"  #base on c's auto_link   
+gem 'marked-rails'
 
 gem "acts_as_list"
 gem 'acts_as_commentable'

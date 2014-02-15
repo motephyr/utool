@@ -26,15 +26,10 @@
 </div>
 
 <script>
-function Editor(input, preview) {
-  this.update = function () {
-    preview.innerHTML = markdown.toHTML(input.value);
-  };
-  input.editor = this;
-  this.update();
-}
-var $ = function (id) { return document.getElementById(id); };
-new Editor($("originText"), $("markdownText"));
+jQuery(document).ready(function($){
+
+  $("#markdownText").html(marked($("#originText").val()));
+});
 </script>
 
 <% content_for :stylesheets do %>

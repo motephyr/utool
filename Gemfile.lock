@@ -133,6 +133,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    marked-rails (0.2.10.1)
     meta_request (0.2.8)
       callsite
       rack-contrib
@@ -280,6 +281,7 @@ DEPENDENCIES
   kaminari
   letter_opener
   magic_encoding
+  marked-rails
   meta_request
   omniauth
   omniauth-facebook
